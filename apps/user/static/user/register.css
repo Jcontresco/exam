@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.register-container{
+
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+form{
+
+    position: relative;
+    
+}
+form p{
+    height: 10vh;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+
+}
+
+form p input{
+    height: 50%;
+}
+.register-btn{
+    height: 5vh;
+    width: 50%;
+    margin-left: 25%; 
+    margin-top: 3vh;
+    text-align: center;
+    background: rgb(150, 87, 87);
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+
+}
+.errorlist{
+    position: absolute;
+    bottom: 30px;
+    margin: 0;
+    background: red;
+    width: 30vw;
+    color: #fff;
+    height: 50px;
+}
+/* error messages  */
+.messages{
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    height: 40vh;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 2vh;
+    list-style: none;
+    font-size: 1.2em;
+    color: #fff;
+}
+.messages li{
+    background:rgb(179, 38, 38);
+    color: #fff;
+    margin: 3vh 0;
+    padding: 10px;
+}
+@media screen and (orientation: landscape) {
+    form p{
+        width: 40%;
+        margin-left: 30%;
+    }
+    .register-btn{
+        width: 20%;
+        margin-left: 40%;
+
+    }
+}

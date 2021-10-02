@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="login" method="post" id="login">
+    {% csrf_token %}
+    <h1>Hello {{request.session.name}}, make a wish  </h1>
+    <p><label for="id_item">I wish for: </label> <input type="item" name="item" id="id_item"></p>
+    <p><label for="id_description">Description </label> <input type="description" name="description" id="id_description"></p>
+    <input class="submit-btn"  type="submit" value="cancel">
+    <a href="/dashboard"></a><input class="submit-btn"  type="submit" value="submit">
+    
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>{{errors}}</p>
+    <h1>Welcome {{request.session.name}}   </h1>
+    <div class="dashboard-contain">
+        <a href="/wish"><input type="submit" value="Make a wish"></a>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>email</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.id}}</tr>
+                <td><a href="/users/show/{{user.id}}">{{user.first_name}}</a></td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at}}</td>
+                <td>{{user.updated_at}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

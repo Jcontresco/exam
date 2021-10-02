@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'user/register.css' %}"> {% endblock %}
+
+{% block content %}
+<h1>Welcome! Sign in to make a wish!</h1>
+<div class="register-container">
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h1>register</h1>
+    <form action="create" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_first_name">First name:</label> <input type="text" name="first_name" id="id_first_name">
+        </p>
+        <p><label for="id_last_name">Last name:</label> <input type="text" name="last_name"  id="id_last_name"></p>
+        <p><label for="id_email">Email:</label> <input type="email" name="email" id="id_email"></p>
+        <p><label for="id_password">Password:</label> <input type="password" name="password" id="id_password"></p>
+        <p><label for="id_confirmed_pw">Confirmed pw:</label> <input type="password" name="confirmed_pw" id="id_confirmed_pw"></p>
+        <input class="register-btn" type="submit" value="register">
+    </form>
+    
+    <form action="login" method="post" id="login">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <p><label for="id_email">Email:</label> <input type="email" name="email" id="id_email"></p>
+        <p><label for="id_password">Password:</label> <input type="password" name="password" id="id_password"></p>
+        <input class="register-btn"  type="submit" value="login">
+    </form>
+</div>
+{% endblock %}
+
+
